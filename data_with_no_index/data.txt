@@ -1,0 +1,1 @@
+{"data": [{"file_name": "@Brendanvanson_tweets.txt", "sum_tl_twt": 199, "sum_tl_wrd": 2407, "sum_sylb": 3363, "read_abilty": 73.10053477847342}]}{"data": [{"file_name": "@dealerrefresh_tweets.txt", "sum_tl_twt": 199, "sum_tl_wrd": 2061, "sum_sylb": 3165, "read_abilty": 67.09910680666158}]}

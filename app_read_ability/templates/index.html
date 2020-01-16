@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Readability_Score</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<div class="container mt-3">
+ <strong style="margin-left: 400px;border: none;font-size: 25px;">Check Readability</strong>
+ <br/>  <br/>
+<table>
+  <tr>
+    <th><strong>Total Number of FIles:  {{ len_file }}</strong></th>
+    <th><strong><a href="/down_load/">All Results Downloads in CSV</a></strong></th>
+    <th> <strong><a href="/delete_all/">All File Delete</a></strong></th>
+  </tr>
+</table>
+<br/><br/>
+  <form action="check_readbily/" method = "POST" enctype = "multipart/form-data">
+    {% csrf_token %}
+    <div class="custom-file mb-3">
+      <input type="file" class="custom-file-input" id="file" onchange="javascript:updateList()" name="file" required="" multiple>
+      <label class="custom-file-label" id="fileList" for="customFile">Choose file</label>
+    </div>
+    
+   
+  
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <br/>
+{% if rbl %}
+   <table>
+  <tr>
+     <th>ID</th>
+    <th>File Name</th>
+    <th>Toatal Tweets</th>
+      <th>Total Words</th>
+        <th>Total Syllable</th>
+        <th>Median</th>
+         <th>Readability</th>
+           <th>Delete</th>
+            <th>View</th>
+  </tr>
+  {% for data in rbl %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ data.file_names  }}</td>
+    <td>{{ data.tl_twts  }}</td>
+    <td>{{ data.tl_wrds  }}</td>
+    <td> {{data.tl_sylbs }}</td>
+    <td> {{ data.median }}</td>
+    <td> {{ data.read_scores  }}</td>
+     <td><a href="/delete/{{ data.id }}"> Delete</a></td>
+       <td><a href="#"> View</a></td>
+  </tr>
+  {% endfor %}
+
+   
+</table>
+{% else %}
+<p1 style="text-align: center;"><em>No Readability Data Found</em></p1>
+{% endif %}
+<br/>
+ {% if rbl.has_other_pages %}
+ <nav aria-label="...">
+  <ul class="pagination">
+    {% if rbl.has_previous %}
+    <li class="page-item disabled">
+      <a href="?page={{ rbl.previous_page_number }}"><span class="page-link">Previous</span></a>
+    </li>
+    {% else %}
+   <!--  <li class="page-item"><a class="page-link" href="#"></a></li> -->
+    {% endif %}
+    {% for i in rbl.paginator.page_range %}
+    {% if rbl.number == i %}
+    <li class="page-item active">
+      <span class="page-link">
+        {{ i }}
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link"href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+    
+    {% if rbl.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ rbl.next_page_number }}">Next</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+    <!--   <a class="page-link" href="#">Previous</a> -->
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+ 
+</div>
+
+
+
+
+
+ 
+ 
+
+
+<script>
+  updateList = function() {
+  var input = document.getElementById('file');
+  var output = document.getElementById('fileList');
+  var tl_files = input.files.length
+
+  output.innerHTML = '<tr>';
+  // for (var i = 0; i < input.files.length; ++i) {
+    // output.innerHTML += '<th>' + input.files.item(i).name + '</th>';
+    output.innerHTML += '<th> All Selected Files: ' + tl_files + '</th>';
+  // }: 
+  output.innerHTML += '</tr>';
+}
+</script>
+
+</body>
+</html>
