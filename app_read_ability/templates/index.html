@@ -29,36 +29,66 @@ tr:nth-child(even) {
 <body>
 
 <div class="container mt-3">
- <strong style="margin-left: 400px;border: none;font-size: 25px;">Check Readability</strong>
+ <strong id="head_read" style="margin-left: 400px;border: none;font-size: 25px;">Check Readability</strong>
+ <strong id="head_scrap" style="display:none;margin-left: 400px;border: none;font-size: 25px;">Scrap Data</strong>
  <br/>  <br/>
-<table>
+<table id="header_read_file">
   <tr>
     <th><strong>Total Number of FIles:  {{ len_file }}</strong></th>
     <th><strong><a href="/down_load/">All Results Downloads in CSV</a></strong></th>
     <th> <strong><a href="/delete_all/">All File Delete</a></strong></th>
   </tr>
 </table>
+<br/>
+<table>
+  <tr>
+    <th><strong><a href="#" id="find_read_ability">Find Read Ability</a></strong></th>
+    <th> <strong><a href="#" id="find_scrap_data">Scrap Data</a></strong></th>
+  </tr>
+</table>
 <br/><br/>
+<div id="file_search">
   <form action="check_readbily/" method = "POST" enctype = "multipart/form-data">
     {% csrf_token %}
     <div class="custom-file mb-3">
       <input type="file" class="custom-file-input" id="file" onchange="javascript:updateList()" name="file" required="" multiple>
       <label class="custom-file-label" id="fileList" for="customFile">Choose file</label>
     </div>
-    
-   
-  
     <div class="mt-3">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </form>
+</div>
+
+<div id="scrap_data" style="display: none"> 
+<form  action="scrap_data/" method = "POST">
+    {% csrf_token %}
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <select name="dropdown">
+        <option><span class="input-group-text" name="username_id" id="username_id">@Username</span></option>
+         <option><span class="input-group-text" name="hashtag_id" id="hashtag_id">#Hashtag</span></option>
+      </select>
+    
+    </div>
+    <input type="text" class="form-control" id="idusername" name="username" placeholder="Enter Username" required="">
+     <input type="text" class="form-control" style="display: none" id="idhasgtag" name="hasgtag" placeholder="Enter Hastag">
+      <input type="text" class="form-control" id="number_twt" name="number_twt" placeholder="Enter Number Tweets" required="">
+  </div>
+   <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Scarp Data</button>
+    </div>
+</form>
+</div>
   <br/>
+  <div id="read_table">
 {% if rbl %}
-   <table>
+   <table >
   <tr>
      <th>ID</th>
     <th>File Name</th>
-    <th>Toatal Tweets</th>
+     <th>Toatal Tweets</th>
+    <th>Toatal Sentence</th>
       <th>Total Words</th>
         <th>Total Syllable</th>
         <th>Median</th>
@@ -70,13 +100,14 @@ tr:nth-child(even) {
   <tr>
     <td>{{ forloop.counter }}</td>
     <td>{{ data.file_names  }}</td>
-    <td>{{ data.tl_twts  }}</td>
+      <td>{{ data.tl_twts  }}</td>
+    <td>{{ data.tl_sents  }}</td>
     <td>{{ data.tl_wrds  }}</td>
     <td> {{data.tl_sylbs }}</td>
     <td> {{ data.median }}</td>
     <td> {{ data.read_scores  }}</td>
      <td><a href="/delete/{{ data.id }}"> Delete</a></td>
-       <td><a href="#"> View</a></td>
+       <td><a href="#" id="{{ data.id }}" data-toggle="modal" data-target="#myModal"   class="data_view_id"  > View</a></td>
   </tr>
   {% endfor %}
 
@@ -85,6 +116,10 @@ tr:nth-child(even) {
 {% else %}
 <p1 style="text-align: center;"><em>No Readability Data Found</em></p1>
 {% endif %}
+
+
+
+
 <br/>
  {% if rbl.has_other_pages %}
  <nav aria-label="...">
@@ -111,7 +146,7 @@ tr:nth-child(even) {
     
     {% if rbl.has_next %}
     <li class="page-item">
-      <a class="page-link" href="?page={{ rbl.next_page_number }}">Next</a>
+      <a class="page-link"  href="?page={{ rbl.next_page_number }}">Next</a>
     </li>
     {% else %}
     <li class="page-item">
@@ -121,18 +156,135 @@ tr:nth-child(even) {
   </ul>
 </nav>
 {% endif %}
+
+</div>
  
 </div>
 
 
 
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 
  
  
+
+
+
 
 
 <script>
+
+ $('select[name="dropdown"]').change(function() {
+    var select_value = $(this).val()
+    if(select_value == '@Username'){
+     $('#idusername').show()
+      $('#idhasgtag').hide()
+       $("#idhasgtag").prop('required',false);
+       $("#idusername").prop('required',true);
+    }
+     if(select_value == '#Hashtag'){
+      $('#idusername').hide()
+      $('#idhasgtag').show()
+      $("#idhasgtag").prop('required',true);
+      $("#idusername").prop('required',false);
+    }
+    
+
+});
+
+$('#find_read_ability').on('click', function(event){
+  $('#file_search').show()
+  $('#scrap_data').hide()
+     $('#read_table').show()
+     $('#header_read_file').show()
+     $('#head_read').show()
+     $('#head_scrap').hide()
+
+});
+
+$('#find_scrap_data').on('click', function(event){
+  $('#file_search').hide()
+  $('#scrap_data').show()
+   $('#read_table').hide()
+   $('#header_read_file').hide()
+   $('#head_read').hide()
+   $('#head_scrap').show()
+
+});
+
+
+ $('.data_view_id').on('click', function(event){
+  var view_id_str = $(this).attr('id');
+  var view_id = view_id_str.replace( /^\D+/g, '');
+
+   $.ajax({
+        url : "view/", // the endpoint
+        type : "GET", // http method
+        data : { 'view_id' : view_id }, // data sent with the post request
+
+        // handle a successful response
+        success : function(data) {
+        var data_json = JSON.parse(data);
+        // console.log(data_json[0]['fields'])
+        var fil_data = data_json[0]['fields'];
+         $.each(fil_data, function (index, value) {
+                    var file_name = fil_data.file_name  
+                    var median = fil_data.median
+                    var tl_sylb = JSON.parse(fil_data.tl_sylb)
+                    var read_score = JSON.parse(fil_data.read_score)
+                    var tl_wrd = JSON.parse(fil_data.tl_wrd)
+                    var tl_twt = JSON.parse(fil_data.tl_twt)
+
+                    $('.modal-body').html('<table>\
+  <tr>\
+    <th><strong>FIles Name:'+ file_name +'</strong></th>\
+    <th><strong>Read Score:'+ median +'</strong></th>\
+    <th> <strong><a href="/delete_all/">All File Delete</a></strong></th>\
+  </tr>\
+</table>')
+
+                   
+                })
+     
+    }
+           
+      
+
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
   updateList = function() {
   var input = document.getElementById('file');
   var output = document.getElementById('fileList');

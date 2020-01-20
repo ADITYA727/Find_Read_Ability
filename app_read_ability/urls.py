@@ -22,5 +22,7 @@ urlpatterns = [
     path('check_readbily/', check_readbily,name='check_readbily'),
     path('delete/<int:id>', delete), 
     path('down_load/', download_csv_file),  
-    path('delete_all/', delete_all),  
+    path('delete_all/', delete_all),
+    path('view/', view), 
+    path('scrap_data/', scrap_data), 
 ]

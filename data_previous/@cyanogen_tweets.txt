@@ -1,0 +1,399 @@
+ Bumped into this guy in the lobby  
+
+ Thirty feet high 100 cloned biker buttmuscle and topped with razor wire coated in highgrade Florida bath salts
+
+ Dude just stop 
+
+ nah 
+
+ never
+
+ We forked it The new project is called Lineage and its the same team thats been building CM
+
+
+
+ Im actually happy to rebrand Never really liked the personal association and I think a fresh start is in order
+
+Thanks for all the support during this rough ride Time for the next adventure 
+
+Disgusting
+
+WTF
+
+ It would need to be enabled in the modem by OP our platform supports it Dont know if this will happen
+
+ Cyanogen Inc and CyanogenMod 
+
+ In LiveDisplay settings you can make the screen any color you want 
+
+Nightlies OTW this is a great device 
+
+ Absolutely
+
+ Right on
+
+ Come have a drink with the crew
+
+ NX500 with Linux
+
+ To do what we do you have to be a little crazy on community and developing for CM 
+
+ Will relay to the themes team
+
+ These are important questions to ask I ask them too 
+
+ We refactored it on top of app ops when Google released it though
+
+ It is now but originally it was not
+
+ I actually wrote PG two years ago in a direct response to an app developer lying about an optout
+
+ Again they do not I cite PG because it would alert you if they did but they dont so it doesnt
+
+ PR wouldnt confront an issue like this head on I do
+
+ If getting paid to do what I love is selling out then yes Also we are hiring 
+
+ sigh Im saying its optin and there is no scraping unless you agree PG would alert if so
+
+ Its not released yet and it wont be in nightly builds only the commercial dist
+
+ No but our dialer SDK will be This integration is only for the commercial version of our OS
+
+ I am testing our integrated version not released yet but will try the regular one too
+
+ I just tested it again and you are wrong Our version is using a lightweight service impl of TC that uses our new SDK
+
+ They way we did it is completely optional and optin And the app side will be open source
+
+ They dont pull it if you opt out we would see a notification from PG if so Sorry if I burst your bubble
+
+ Actually they dont or we would see a PG notification when you clicked no The whole thing is optional
+
+ Thats a loaded question So is Google Facebook and half the apps on your phone
+
+ They cannot if Privacy Guard is enabled
+
+ My response 
+
+ Release 38 upcoming has ANT support
+
+ its in Settings It also prompts you during the initial setup
+
+ very soon
+
+ almost forgot MC via dialup wow Ancient history 
+
+ 
+
+ RoP MPV Everwar how many hours did we sink into that 
+
+ 
+
+ Awesome 
+
+ 
+
+ 
+
+ classic 
+
+ Big props to the Futex vulnerability used in TowelRoot is already fiex on the One Plus One
+
+ OnePlus One 16GB Silk White 299 USD unlocked and without contract 
+
+ congrats 
+
+ aaaaaany day now guys this is completely unaeptable
+
+ Not really Some of the things you can do with profiles cant be done by apps Would really like to improve that feature
+
+Unboxing the OnePlus One 
+
+ request 5120611 Thanks
+
+ Probably my fault from the new RIL stuff we had to do I think its fixed now though
+
+ I havent been able to log in for weeks Opened a support issue but no response Whats up
+
+ Possibly due to the big RIL upgrade Will look into it File a JIRA if there isnt one
+
+ What did you need
+
+Looking forward to what these guys might surprise us with 
+
+Getting ready at the event in Beijing 
+
+ just tried it and couldnt reproduce a crash but it hung trying to get a location Could you paste a logcat of the crash
+
+ We have long abandoned the permissionrevoking way Our current impl is based on app ops Do you have a repro case on cm11
+
+ Unboxing my new Oppo N1 preinstalled with Cyanogen 
+
+ broken how It works great
+
+ Thanks guys Been a long time
+
+Oppo N1 CyanogenMod Edition 
+
+ It can be a little surreal sometimes
+
+ Seattle
+
+ we have a few things to add to that list
+
+Do you love Android and want to be a part of something epic 
+
+Go forth and void thy warranty 
+
+ Is anyone else as frustrated as I am trying to convey how blowyourtitsoff awesome this news is to normals
+
+ Open source Android firmware developer Cyanogen announces funding round led by 
+
+Moment of truth is here 
+
+ Its been the same story for as long as I have known him
+
+ Wow Entropy has really lost it this time
+
+ Direct CM Aount and future release process A glimpse into what weve been working on and whats to come 
+
+ That said were soon going to be providing user builds private keys along side the userdebug test keys builds
+
+ The signing keys issue is a tradeoff between hackability and security Changing keys requires wiping out your data
+
+ Yeah you have a point Well fix it
+
+ What device
+
+ hahah no I want to see more people do interesting things with the framework
+
+ with 8gb of ram and 256gb storage is it bedazzled out of the box
+
+ Haha nah thats just trolling
+
+ Were working on it
+
+oO 
+
+ wonder how that tastes if you mix them together
+
+ yes
+
+CM101 cometh 
+
+ there will be an option to turn it on by default essentially requiring you to optin to apps that use personal data
+
+ Sure thing shoot me an email
+
+ Its quite a big undertaking and since it uses IMS we would need some help from 
+
+ Cydia Substrate is for making changes to the stock ROM its not a replacement like CM
+
+ Umm I am typing this from CM on S4
+
+ Its awesome stuff but totally unnecessary on CM where you can just compile the whole thing yourself
+
+ the stuff currently on github wont get you a working build but Ill get it up there soon
+
+ Everything works now will upload repos later today
+
+ It would take a lot of expensive infrastructure were a high traffic project
+
+ Sure both are terrible options
+
+ Were kind of on the fence at this point and I dont think every project is currently replicated there
+
+Were hosting a drinkup for hackers in Seattle on May 2 
+
+ Not even close
+
+ Soon
+
+ There are still issues with supporting Exynos4 devices Significant progress has been made lately though
+
+ Yeah we are merging new features now that the code freeze is over Expect breakage in nightlies
+
+CM101M2 has made an appearance on our download mirrors enjoy 
+
+ ahh the good old days
+
+ I do but I think that one belongs to I have a black RAV4 with a CId sticker on the back window
+
+First builds of 101 are here 
+
+ Yeah Were about to bring back the monthly builds now that 101 is pretty solid
+
+2013 goal for CM 20 million users Happy New Year
+
+ Worst technique ever Reported asshole
+
+ Im pretty sure it would be exactly 8 liters
+
+ we catch it in WindowManagerService and send an intent Can only be done by changing the framework
+
+ Yeah Shiros was epic for sure
+
+ Not necessary The story is long and were professionals
+
+ lol that was a long time ago who were you on there i remember everyone pretty well at least by their nick
+
+We have our domain back and everything was resolved amicably More info on the way Lets just forget about this
+
+ nah getcm is just taking a bit of a beating due to our 100 stable release
+
+So yeah its from now on And of course getcm
+
+Strange things are afoot at the 
+
+CM 10 M2 builds coming your way 
+
+ pretty cool idea but not much room left on the status bar Maybe in the notification drop down
+
+
+
+ last one 
+
+ angry loggercat 
+
+Most excellent the ultimate logcat 
+
+ Only 4 days remaining in the worldwide and Google Nexus 7 giveaway competition Youve 
+
+ Im not sure The 7x30based devices are seeing some progress but there are still issues
+
+ We want to do a proper stable release quarterly considering that Android is updated every six months
+
+ Its coming soon
+
+ Yeah these are in addition to nightlies
+
+ I9100G is in this round I9100 has a few minor issues right now
+
+ We wanted to have something that resembles a stable build so that we can take bug reports
+
+ As far as I know yeah
+
+ Soon We dont have compatible graphics drivers yet
+
+What do you think about the monthly release plan for CM I hope its a good balance of quality vs quantity
+
+Our first CM10 release kinda 
+
+ right they got it from us and we got the fix from Qualcomm
+
+ yeah those are fine Galaxy S3 and all of the others are not working
+
+ yeah because I have no effin idea at this point Everything should be working from the CM side
+
+anyway you dont have to tweet at me just shoot me an email The crash is really weird and I cant debug it
+
+Any engineers from out there who can help solve the issue with the app on CM10
+
+CM9 stable builds rolling out now
+
+ code it and send a patch You can post on our Google code page too
+
+ We did a long time ago The USA models are called d2
+
+ The international models have a completely different chipset so no guarantee based on that The team is working on it though
+
+ Im really not sure I dont notice any real dip in performance It might be more noticeable on crappier hardware
+
+ its not an inefficiency really Qualcomm just came up with a really good general Dalvik optimization that they dont share
+
+ maybe theyll open up more stuff with their jb release well see soon I guess
+
+ if you browse CAF youll find all this stuff they link proprietary static libs into a bunch of places
+
+ and stock doesnt have the krait memory patches Theres also secret skia stuff on stock
+
+ part of it is opensource but it relies on a static lib that isnt available
+
+ the stock ROM has secret sauce from Qualcomm that speeds up some Dalvik stuff We dont have that code
+
+ Sounds awesome but Ill be out of town
+
+See you at 
+
+ cameras are device specific As a general rule we wont release for a device if all the hardware isnt working
+
+ I proposed that a year ago Got shot down Its a well known brand now messing with that would be stupid
+
+On the way to CM9 
+
+ yup 
+
+ you might find unofficial builds of 9 for the N1 Right now it wont pass the CTS so we wont be releasing for it yet
+
+ yeah but the vibrator will be stuck on permanently
+
+ both
+
+ at least some of Linaros work will be in there
+
+ eventually Weve had problems with the camera on that class of devices
+
+ yeah Nexus S and Galaxy Nexus are the top of the list
+
+ is that even a question 
+
+ or cherrypicking us and calling it finished 
+
+More details later this week 
+
+The most stable devices will get the RC first The system weve put in place should allow other devices to catch up quickly
+
+ weve been doing weekly updates on Google
+
+Guess what Its not that easy We dont just call something stable unless we mean it Also RC1 is soon
+
+CM has been getting a lot of crap lately for taking so long with a release
+
+ um yeah 
+
+ we are working with the linaro guys to resolve the issues
+
+ sure will
+
+ set the recovery color format and try the graphicsc in samsungmsm8660common
+
+ tried it but I am not convinced that building with g 47 is ready for prime time yet
+
+And heres the revised CM9 boot animation by 
+
+ its already in the works
+
+ yeah it was fun We need to get everyone around here together more often
+
+ I know I have been neglecting my Twitterly duties lately 
+
+Oh wow 100k followers HI
+
+ dunno about shirts but I am the proud owner of an AOKP screen cleaner now
+
+CM9 nightly builds are live More targets are on the way 
+
+New build servers online 
+
+NICE 
+
+Say hi to Cid 
+
+ ohai 
+
+ yeah i really just use G these days
+
+Good stuff happening at Rootz via 
+
+ CyanogenMod720RC1 is upon us 
+
+A quick update on the status of CM nightlies and build server situation 
+
+ yes for sure we are in the process of formalizing a lot of things
+
+ No need for a panic Im working on it
+
+ Wish the site worked with organizations
+
+Trying to cheat the system so I can check out my geek cred via 
